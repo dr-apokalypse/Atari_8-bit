@@ -10,11 +10,10 @@ n       0230 SDLSTL
 n       022F SDMCTL
 n       3178 CHANGE_COLORS
 n       4140 COLORS
+n       31D7 DELAY
 n       3000 DLIST
 n       3164 INITIALIZE_ANTIC
-n       31D7 INIT_TIMEDELAY
-n       31DF M
-n       31E4 N
+n       31D9 M
+n       31DE N
 n       4021 SCREEN_RAM
-n       31DD TIMEDELAY
-n       31EA X
+n       31E4 X

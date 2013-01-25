@@ -167,13 +167,13 @@ timedelay
 
 outer_loop
 	
-	cpx #$00
+	cpx #$01
 	inx
 	beq endloop
 
 inner_loop
 	
-	cmp #$10
+	cmp #$01
 	clc
 	adc #1
 	bne inner_loop

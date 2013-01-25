@@ -49,12 +49,12 @@ dlist
 
 	*=$4000 ;begin display list on page $40
 
-	.byte $70 , $70 , $70 	;blank 24 scanlines -- 21 mode lines remaining
+	.byte $70 , $70 , $70 	;blank 24 scanlines -- 24 mode lines remaining
 	.byte $48         		;LMS and ANTIC mode 8
 	.byte $50 , $40   
 	.byte $08 , $08 , $08 , $08 , $08 , $08 , $08 , $08 , $08 , $08
 	.byte $08 , $08 , $08 , $08 , $08 , $08 , $08 , $08 , $08 , $08	
-	.byte $08         		;21 mode lines
+	.byte $08 , $08 , $08 , $08       		;24 mode lines
 	.byte $41         		;JVB
 	.byte $00 , $40       
 	
@@ -65,35 +65,38 @@ screen_ram
 	*=$4050
 	
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B	
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
-	.byte $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B , $1B
+	.byte $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4 , $E4
 	
 colors
 	
 	*=$3150
 	lda #0
 	sta color4
-	lda #$06
+	lda #$78
 	sta color0
-	lda #$04
+	lda #$74
 	sta color1
 	lda #$0E
 	sta color2
@@ -113,70 +116,56 @@ change_colors
     
     lda #0
 	sta color4
-	lda #$06
+	lda #$78
 	sta color0
-	lda #$04
+	lda #$74
 	sta color1
 	lda #$0E
 	sta color2
-    ;jsr init_timedelay
+    jsr delay
     
     lda #$0E
 	sta color4
 	lda #$0
 	sta color0
-	lda #$06
+	lda #$78
 	sta color1
-	lda #$04
+	lda #$74
 	sta color2
-    ;jsr init_timedelay
+    jsr delay
     
-    lda #04
+    lda #$74
 	sta color4
 	lda #$0E
 	sta color0
 	lda #$0
 	sta color1
-	lda #$06
+	lda #$78
 	sta color2
-    ;jsr init_timedelay
+    jsr delay
     
-    lda #06
+    lda #$78
 	sta color4
-	lda #$04
+	lda #$74
 	sta color0
 	lda #$0E
 	sta color1
 	lda #$0
 	sta color2
-    ;jsr init_timedelay
+    jsr delay
     jmp change_colors
 
-init_timedelay
 
-    lda #0
-    ldx #0
-    ldy #0
+delay
 
-timedelay
-
-outer_loop
-	
-	cpx #$00
-	inx
-	beq endloop
-
-inner_loop
-	
-	cmp #$00
-	clc
-	adc #1
-	bne inner_loop
-	jmp outer_loop
-
-endloop
-    
-    rts
-    
+	ldx #$FF
+m	dex
+	beq x 
+	ldy #$FF
+n	dey
+	bne n
+	jmp m
+	    
+x	rts
     
         
