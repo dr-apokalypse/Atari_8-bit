@@ -1,0 +1,20 @@
+xasm 3.0.1
+Label table:
+n       02C4 COLOR0
+n       02C5 COLOR1
+n       02C6 COLOR2
+n       02C7 COLOR3
+n       02C8 COLOR4
+n       0231 SDLSTH
+n       0230 SDLSTL
+n       022F SDMCTL
+n       3178 CHANGE_COLORS
+n       4140 COLORS
+n       3000 DLIST
+n       31EC ENDLOOP
+n       3164 INITIALIZE_ANTIC
+n       31D7 INIT_TIMEDELAY
+n       31E2 INNER_LOOP
+n       31DD OUTER_LOOP
+n       4021 SCREEN_RAM
+n       31DD TIMEDELAY
